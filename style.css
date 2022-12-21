@@ -1,0 +1,111 @@
+/* Модальное окно */
+
+.pop-up {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.26);
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(5px);
+}
+
+.block {
+  display: flex;
+  background-color: white;
+  height: 100px;
+  width: 200px;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}
+
+.text {
+  margin: 0;
+}
+.close {
+  cursor: pointer;
+  transform: rotate(45deg);
+  height: min-content;
+  color: red;
+  font-size: 40px;
+}
+/* Главная страница */
+
+.wrapper {
+  display: grid;
+  grid-template-areas:
+    "first first first"
+    "one two three"
+    "third-1 third-2 third-2";
+}
+
+.shuffle {
+  grid-template-areas:
+    "first first first"
+    "two one three"
+    "third-1 third-2 third-2";
+}
+
+@media (max-width: 576px) {
+  .wrapper {
+    grid-template-areas:
+      "first"
+      "one"
+      "two"
+      "three"
+      "third-1"
+      "third-2";
+  }
+  .shuffle {
+    grid-template-areas:
+      "first"
+      "two"
+      "one"
+      "three"
+      "third-1"
+      "third-2";
+  }
+}
+
+.first-block {
+  border: 1px solid black;
+  grid-area: first;
+  text-align: center;
+}
+
+.second-block-1 {
+  border: 1px solid black;
+  background-color: pink;
+  height: 50px;
+  grid-area: one;
+}
+
+.second-block-2 {
+  border: 1px dashed black;
+  background-color: rgb(248, 240, 119);
+  height: 50px;
+  grid-area: two;
+}
+
+.second-block-3 {
+  border: 1px solid black;
+  background-color: rgb(250, 29, 66);
+  height: 50px;
+  grid-area: three;
+}
+
+.third-block-1 {
+  border: 1px solid black;
+  grid-area: third-1;
+}
+
+.third-block-2 {
+  border: 1px solid black;
+  grid-area: third-2;
+}
